@@ -39,6 +39,7 @@ public class ContactHelper extends HelperBase {
 
     public void closeAlert(){
         wd.switchTo().alert().accept();
+        wd.findElement(By.cssSelector("div.msgbox"));
     }
 
     public void createContact(ContactData contact) {
@@ -52,4 +53,9 @@ public class ContactHelper extends HelperBase {
     public void initContactCreation() {
         click(By.linkText("add new"));
     }
+
+    public int getContactCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
 }

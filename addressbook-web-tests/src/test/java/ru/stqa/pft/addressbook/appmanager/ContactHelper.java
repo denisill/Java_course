@@ -46,9 +46,22 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("div.msgbox"));
     }
 
-    public void createContact(ContactData contact) {
+    public void create(ContactData contact) {
         fillContactForm(contact);
         submitContactCreation();
+    }
+
+    public void modify(ContactData contact, int index) {
+        selectContact(index);
+        initContactModification(index);
+        fillContactForm(contact);
+        submitContactModification();
+    }
+
+    public void delete(int index) {
+        selectContact(index);
+        deleteSelectedContacts();
+        closeAlert();
     }
 
     public boolean isThereAContact() {
@@ -62,7 +75,7 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<ContactData>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {

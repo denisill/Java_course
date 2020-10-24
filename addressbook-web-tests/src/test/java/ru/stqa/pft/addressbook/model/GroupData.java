@@ -31,6 +31,18 @@ public class GroupData {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getHeader() {
+        return header;
+    }
+
+    public String getFooter() {
+        return footer;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -49,17 +61,7 @@ public class GroupData {
         return result;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getHeader() {
-        return header;
-    }
-
-    public String getFooter() {
-        return footer;
-    }
 
     @Override
     public String toString() {

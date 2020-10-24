@@ -7,6 +7,31 @@ public class ContactData {
     private String hometelefon;
     private String email;
 
+    public ContactData withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public ContactData withFirstname(String firstname) {
+        this.firstname = firstname;
+        return this;
+    }
+
+    public ContactData withLastname(String lastname) {
+        this.lastname = lastname;
+        return this;
+    }
+
+    public ContactData withHometelefon(String hometelefon) {
+        this.hometelefon = hometelefon;
+        return this;
+    }
+
+    public ContactData withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -25,21 +50,6 @@ public class ContactData {
 
     public int getId() {
         return id;
-    }
-
-    public ContactData withId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    public ContactData withFirstname(String firstname) {
-        this.firstname = firstname;
-        return this;
-    }
-
-    public ContactData withLastname(String lastname) {
-        this.lastname = lastname;
-        return this;
     }
 
     @Override
@@ -62,15 +72,7 @@ public class ContactData {
         return result;
     }
 
-    public ContactData withHometelefon(String hometelefon) {
-        this.hometelefon = hometelefon;
-        return this;
-    }
 
-    public ContactData withEmail(String email) {
-        this.email = email;
-        return this;
-    }
 
     @Override
     public String toString() {

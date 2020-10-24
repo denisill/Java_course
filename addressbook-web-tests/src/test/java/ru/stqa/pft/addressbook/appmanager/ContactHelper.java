@@ -29,8 +29,8 @@ public class ContactHelper extends HelperBase {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
-    public void initContactModification() {
-        wd.findElement(By.xpath("//img[@alt='Edit']")).click();
+    public void initContactModificationById(int id) {
+        wd.findElement(By.xpath(String.format("//input[@value='%s']/../../td[8]/a", id))).click();
     }
 
     public void submitContactModification() {
@@ -53,7 +53,7 @@ public class ContactHelper extends HelperBase {
 
     public void modify(ContactData contact) {
         selectContactById(contact.getId());
-        initContactModification();
+        initContactModificationById(contact.getId());
         fillContactForm(contact);
         submitContactModification();
     }

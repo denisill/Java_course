@@ -17,16 +17,4 @@
     <homePhone>phone 2</homePhone>
     <address>address 2</address>
   </contact>
-  <contact>
-    <firstname>name 3</firstname>
-    <lastname>lastname 3</lastname>
-    <homePhone>phone 3</homePhone>
-    <address>address 3</address>
-  </contact>
-  <contact>
-    <firstname>name 4</firstname>
-    <lastname>lastname 4</lastname>
-    <homePhone>phone 4</homePhone>
-    <address>address 4</address>
-  </contact>
 </list>

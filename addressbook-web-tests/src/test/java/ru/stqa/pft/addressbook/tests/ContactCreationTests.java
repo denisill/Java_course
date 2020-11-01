@@ -41,11 +41,11 @@ public class ContactCreationTests extends TestBase {
     public void testContactCreation(ContactData contact) throws Exception {
 
         app.goTo().contactPage();
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         app.goTo().contactAdd();
         app.contact().create(contact);
         app.goTo().homePage();
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         assertThat(after.size(), equalTo(before.size() + 1));
 
         assertThat(after, equalTo(before.withAdded(

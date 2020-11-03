@@ -116,4 +116,9 @@ public class ContactHelper extends HelperBase {
                 withHomePhone(homephone).withMobilePhone(mobilephone).withWorkPhone(workphone).
                 withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address);
     }
+
+    public void addToGroup(ContactData findContact) {
+        selectContactById(findContact.getId());
+        wd.findElement(By.name("add")).click();
+    }
 }

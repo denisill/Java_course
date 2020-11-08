@@ -13,11 +13,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
+    private String browser;
     private final Properties properties;
     WebDriver wd;
-
-    private String browser;
-
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -38,11 +36,19 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
 
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         wd.get(properties.getProperty("web.baseUrl"));
     }
 
     public void stop() {
         wd.quit();
+    }
+
+    public HttpSession newSession() {
+        return new HttpSession(this);
+    }
+
+    public String getProperty(String key) {
+        return properties.getProperty(key);
     }
 }

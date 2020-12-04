@@ -22,12 +22,10 @@ public class GroupData {
     @Column(name = "group_name")
     private String name;
 
-    @ManyToMany(mappedBy = "groups")
+    @ManyToMany(mappedBy = "groups", fetch = FetchType.EAGER)
     private Set<ContactData> contacts = new HashSet<ContactData>();
 
-    public Contacts getContacts() {
-        return new Contacts(contacts);
-    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -60,6 +58,10 @@ public class GroupData {
     @Column(name = "group_footer")
     @Type(type = "text")
     private String footer;
+
+    public Contacts getContacts() {
+        return new Contacts(contacts);
+    }
 
     public GroupData withId(int id) {
         this.id = id;

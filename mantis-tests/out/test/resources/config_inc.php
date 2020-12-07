@@ -11,4 +11,4 @@ $g_smtp_host =   'localhost';
 
 $g_default_timezone       = 'Europe/Berlin';
 
-$g_crypto_master_salt     = '7ipIZN24OB+uaz/wr08gD8cPXlZNIjnWR+wtU7Q+v2E=';
+$g_crypto_master_salt     = 'yAXSluu01wx1nZVOLAif/nQ8xOp/vYz6rkmivS9Dn7o=';
